@@ -77,12 +77,32 @@
 
 .hero-overlay h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-top: 150px;
+  position: relative;
+  color: #fff;
+  text-align: left;
+  animation: glowPulse 2s ease-in-out infinite;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* Glowing pulse effect */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px rgba(234, 220, 18, 0.323), 0 0 20px rgba(229, 255, 0, 0.219);
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px rgb(0, 0, 0), 0 0 30px rgba(255, 251, 0, 0.173);
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
+  }
+}
+
 
 .hero-overlay p {
   font-size: 1.2rem;
   max-width: 800px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 

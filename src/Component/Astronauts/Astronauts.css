@@ -1,0 +1,490 @@
+/* Astronauts.css - Glass effect styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* Main container */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  background-attachment: fixed;
+}
+
+/* Main container with stars background */
+.astronaut-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Stars background animation */
+.astronaut-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 150px 120px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 200px 90px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 300px 220px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+  background-size: 400px 400px;
+  z-index: -1;
+  animation: sparkle 120s linear infinite;
+}
+
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
+}
+
+/* Main title */
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  border-radius: 2px;
+}
+
+/* Section headings */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e0e4fc;
+  position: relative;
+  padding-left: 15px;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 4px;
+  background: linear-gradient(180deg, #8ec5fc, #e0c3fc);
+  border-radius: 2px;
+}
+
+/* Section header bar styling (AT THE SPACE STATION & ACTIVE ASTRONAUTS) */
+.section-header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 20px;
+  margin: 40px 0 30px;
+  border-radius: 5px;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-left: 0;
+  color: #fff;
+}
+
+.section-header h2::before {
+  display: none;
+}
+
+/* Space Station crew styling */
+.space-station-crew {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0 20px;
+  margin-bottom: 30px;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  background-color: #000 !important;
+}
+
+.crew-member {
+  flex: 0 0 auto;
+  width: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crew-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.crew-photo {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(142, 197, 252, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.placeholder-image::after {
+  content: "🧑‍🚀";
+  font-size: 40px;
+}
+
+.crew-member h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+  color: #e0e4fc;
+}
+
+.crew-member p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+/* Active astronauts styling */
+.active-astronauts {
+  padding: 20px 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.astronaut-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.astronaut-card {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+   box-shadow: 0 8px 32px rgba(224, 228, 252, 0.2); /* Corrected */
+}
+
+.crew-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+
+/* Main container with stars background */
+.astronaut-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Stars background animation */
+.astronaut-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 150px 120px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 200px 90px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 300px 220px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+  background-size: 400px 400px;
+  z-index: -1;
+  animation: sparkle 50s linear infinite;
+
+}
+
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
+}
+
+/* Main title */
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  border-radius: 2px;
+}
+
+/* Section headings */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e0e4fc;
+  position: relative;
+  padding-left: 15px;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 4px;
+  background: linear-gradient(180deg, #8ec5fc, #e0c3fc);
+  border-radius: 2px;
+}
+
+/* Glass effect sections */
+section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Section theme colors */
+section:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid rgba(142, 197, 252, 0.5);
+}
+
+section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(224, 195, 252, 0.5);
+}
+
+/* Special section for history - darker theme */
+section:nth-child(3) {
+  background: rgba(30, 60, 114, 0.3);
+}
+
+/* Special section for future - cooler theme */
+section:nth-child(6) {
+  background: rgba(42, 82, 152, 0.3);
+}
+
+/* Hover effect on sections */
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Glass reflections */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(35deg);
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+section:hover::before {
+  transform: rotate(35deg) translateX(20%);
+}
+
+/* Paragraph styling */
+p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Links styling */
+a {
+  color: #8ec5fc;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e0c3fc;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #e0c3fc;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  color: #8ec5fc;
+  font-size: 1.2em;
+}
+
+/* Alternate list item styling */
+li:nth-child(odd)::before {
+  color: #8ec5fc;
+}
+
+li:nth-child(even)::before {
+  color: #e0c3fc;
+}
+
+/* Strong text */
+strong {
+  color: #e0c3fc;
+  font-weight: 600;
+}
+
+/* Contact section special styling */
+section:last-child {
+  background: rgba(142, 197, 252, 0.1);
+}
+
+/* Notable astronauts styling */
+section:nth-child(8) li strong {
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  section {
+    padding: 20px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8ec5fc, #e0c3fc);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e0c3fc, #8ec5fc);
+}

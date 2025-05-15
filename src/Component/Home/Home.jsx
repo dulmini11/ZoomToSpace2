@@ -33,11 +33,6 @@ const Home = () => {
 
       <div className="hero-overlay">
         <h1>Let’s be astronauts for a moment,<br/>  let’s go to space</h1>
-        <p>
-          Explore the wonders of our planet and beyond with SPACE.<br/>
-           Discover the beauty of the solar system and 
-           join the journey through the cosmos.
-        </p>
       </div>
         {/* ↓ Arrow goes here ↓ */}
       <div className="scroll-down-arrow">
