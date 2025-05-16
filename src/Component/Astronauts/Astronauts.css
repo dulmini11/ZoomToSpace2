@@ -9,6 +9,7 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
   color: #fff;
   background-attachment: fixed;
+  
 }
 
 /* Main container with stars background */
@@ -19,6 +20,36 @@ body {
   padding: 40px 20px;
   overflow: hidden;
 }
+
+.avideo {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.astronaut-video {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin-left: 25%;
+  border-radius: 100%;
+}
+
+.video-heading {
+  position: absolute;
+  top: 20px; /* distance from the top of the video */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* better visibility */
+  pointer-events: none; /* so it doesn't block interaction with video */
+}
+
+
 
 /* Stars background animation */
 .astronaut-container::before {
@@ -325,7 +356,7 @@ section {
 /* Section theme colors */
 section:nth-child(odd) {
   background: rgba(255, 255, 255, 0.08);
-  border-left: 3px solid rgba(142, 197, 252, 0.5);
+  border-left: 3px solid rgba(252, 177, 142, 0.5);
 }
 
 section:nth-child(even) {
@@ -359,10 +390,10 @@ section::before {
   left: -50%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(
+  background:linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
+    rgba(189, 172, 172, 0.1),
     transparent
   );
   transform: rotate(35deg);
@@ -425,17 +456,17 @@ li::before {
   position: absolute;
   left: 5px;
   top: 0;
-  color: #8ec5fc;
+  color: #fcf58e;
   font-size: 1.2em;
 }
 
-/* Alternate list item styling */
+/* Alternate list item styling bulot point color */
 li:nth-child(odd)::before {
-  color: #8ec5fc;
+  color: #efe4ac;
 }
 
 li:nth-child(even)::before {
-  color: #e0c3fc;
+  color: #bbbfee;
 }
 
 /* Strong text */
@@ -447,12 +478,6 @@ strong {
 /* Contact section special styling */
 section:last-child {
   background: rgba(142, 197, 252, 0.1);
-}
-
-/* Notable astronauts styling */
-section:nth-child(8) li strong {
-  font-size: 1.05em;
-  letter-spacing: 0.5px;
 }
 
 /* Responsive design */

@@ -1,5 +1,8 @@
 import React from 'react';
 import './Astronauts.css';
+import astronautVideo from '../../assets/astronauts.mp4';
+{/* FamousAstronauts */}
+
 {/* AT THE SPACE STATION */}
 import anneImage from '../../assets/anne_m.jpg';
 import alexyImage from '../../assets/alexy_z.webp';
@@ -51,16 +54,69 @@ import Mark from '../../assets/Mark_t.webp';
 import Shannon from '../../assets/Shannon_w.webp';
 import Jessicaw from '../../assets/Jessica_w.webp';
 import Douglas  from '../../assets/Douglas_h.webp';
-
 import Christopher from '../../assets/Christopher_l.jpg';
 import Sunita from '../../assets/Sunita_l.webp';
 import Barry from '../../assets/Barry_e.webp';
 import Stephanie from '../../assets/stephanie_d.webp';
 import Reid from '../../assets/Reid_w.webp';
 import Jessicawi from '../../assets/Jessica_wi.webp';
+{/* FamousAstronauts */}
 
+{/* AT THE SPACE STATION */}
+import aneilImage from '../../assets/anilA.jpg';
+import ajohnImage from '../../assets/ajohn.jpg';
+import asallyImage from '../../assets/asally.jpg';
+import amaeImage from '../../assets/amae.jpg';
+import apeggyImage from '../../assets/apeggy.jpg';
+import achrisImage from '../../assets/achirs.jpg';
+import achristinaImage from '../../assets/achristina.jpg';
 
 const Astronauts = () => {
+
+const FamousAstronauts = [
+  {
+    name: "Neil Armstrong",
+    image: aneilImage,
+    alt: "Neil Armstrong",
+    agency: "First person to walk on the Moon (Apollo 11, 1969)"
+  },
+  {
+    name: "John Glenn",
+    image: ajohnImage,
+    alt: "John Glenn",
+    agency: "First American to orbit Earth and oldest person in space at age 77"
+  },
+  {
+    name: "Sally Ride",
+    image: asallyImage,
+    alt: "Sally Ride",
+    agency: "First American woman in space (1983)"
+  },
+  {
+    name: "Mae Jemison",
+    image: amaeImage,
+    alt: "Mae Jemison",
+    agency: "First African American woman in space (1992)"
+  },
+  {
+    name: "Peggy Whitson",
+    image: apeggyImage,
+    alt: "Peggy Whitson",
+    agency: "Record holder for most spacewalks by a woman and most time in space by an American (665 days)"
+  },
+  {
+    name: "Chris Hadfield",
+    image: achrisImage,
+    alt: "Chris Hadfield",
+    agency: "Canadian astronaut known for social media presence and videos from space"
+  },
+  {
+    name: "Christina Koch",
+    image: achristinaImage,
+    alt: "Christina Koch",
+    agency: "Longest single spaceflight by a woman (328 days)"
+  }
+];
 
 const crewMembers = [
   {
@@ -401,30 +457,64 @@ const activeMembers = [
 
   return (
     <div className="astronaut-container">
-      <h1>Astronauts</h1>
+      <div className='avideo'>
+      <h1 className="video-heading">Astronauts</h1>
+      <video
+        className="astronaut-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        disablePictureInPicture
+        controlsList="nodownload nofullscreen noremoteplayback"
+      >
+        
+        <source src={astronautVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      </div>
 
       <section>
-        <h2>What is an Astronaut?</h2>
-        <p>
-          The term "astronaut" derives from the Greek words "astron" (star) and "nautes" (sailor), 
-          referring to those who journey through the cosmos. In the United States, professionals 
-          who travel to space are referred to as astronauts, while in Russia they are known as 
-          cosmonauts, and in China as taikonauts.
-        </p>
-        <p>
-          While the term was once reserved for military-trained professionals, it now includes 
-          civilians, scientists, engineers, and even private citizens. Since inception, NASA has 
-          selected 360 astronaut candidates: 299 men, 61 women; 212 military, 138 civilians, creating
-          a diverse corps of space explorers.
-        </p>
-        <p>
-          Astronauts are not just pilots but scientists, engineers, doctors, and researchers who conduct
-          crucial experiments in the unique microgravity environment of space. Their work contributes to
-          advances in medicine, technology, environmental science, and our fundamental understanding of physics.
-        </p>
-      </section>
+      <h2>What is an Astronaut?</h2>
+      <p>
+        The term "astronaut" derives from the Greek words "astron" (star) and "nautes" (sailor), 
+        referring to those who journey through the cosmos. In the United States, professionals 
+        who travel to space are referred to as astronauts, while in Russia they are known as 
+        cosmonauts, and in China as taikonauts.
+      </p>
+      <p>
+        While the term was once reserved for military-trained professionals, it now includes 
+        civilians, scientists, engineers, and even private citizens. Since inception, NASA has 
+        selected 360 astronaut candidates: 299 men, 61 women; 212 military, 138 civilians, creating
+        a diverse corps of space explorers.
+      </p>
+      <p>
+        Astronauts are not just pilots but scientists, engineers, doctors, and researchers who conduct
+        crucial experiments in the unique microgravity environment of space. Their work contributes to
+        advances in medicine, technology, environmental science, and our fundamental understanding of physics.
+      </p>
+    </section>
+
+      {/* AT THE SPACE STATION */}
+      <div className="section-header">
+        <h2>Famous Astronauts in Space History</h2>
+      </div>
+      <section className="space-station-crew">
+        {FamousAstronauts.map((member, index) => (
+            <div className="crew-member" key={index}>
+            <div className="crew-photo">
+                <img src={member.image} alt={member.alt} className="astronaut-image" />
+            </div>
+            <h3>{member.name}</h3>
+            <p>{member.agency}</p>
+            </div>
+        ))}
+        </section>
       
       {/* AT THE SPACE STATION */}
+      <div className="section-header">
+        <h2>astronauts At the Space Station </h2>
+      </div>
       <section className="space-station-crew">
         {crewMembers.map((member, index) => (
             <div className="crew-member" key={index}>
@@ -562,18 +652,6 @@ const activeMembers = [
         </p>
       </section>
 
-      <section>
-        <h2>Notable Astronauts</h2>
-        <ul>
-          <li><strong>Neil Armstrong:</strong> First person to walk on the Moon (Apollo 11, 1969)</li>
-          <li><strong>John Glenn:</strong> First American to orbit Earth and oldest person in space at age 77</li>
-          <li><strong>Sally Ride:</strong> First American woman in space (1983)</li>
-          <li><strong>Mae Jemison:</strong> First African American woman in space (1992)</li>
-          <li><strong>Peggy Whitson:</strong> Holds record for most spacewalks by a woman and most time in space by an American (665 days)</li>
-          <li><strong>Chris Hadfield:</strong> Canadian astronaut known for social media presence and videos from space</li>
-          <li><strong>Christina Koch:</strong> Longest single spaceflight by a woman (328 days)</li>
-        </ul>
-      </section>
 
       <section>
         <h2>Contact Information</h2>
