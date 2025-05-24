@@ -1,6 +1,6 @@
 import React from 'react';
 import './Astronauts.css';
-import astronautVideo from '../../assets/astronauts.mp4';
+import astronautGif from '../../assets/astronauts.gif';
 {/* FamousAstronauts */}
 
 {/* AT THE SPACE STATION */}
@@ -458,21 +458,13 @@ const activeMembers = [
   return (
     <div className="astronaut-container">
       <div className='avideo'>
-      <h1 className="video-heading">Astronauts</h1>
-      <video
-        className="astronaut-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        controlsList="nodownload nofullscreen noremoteplayback"
-      >
-        
-        <source src={astronautVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      </div>
+  <h1 className="video-heading">Astronauts</h1>
+  <img 
+    className="astronaut-video" 
+    src={astronautGif} 
+    alt="Astronauts animation" 
+  />
+</div>
 
       <section>
       <h2>What is an Astronaut?</h2>

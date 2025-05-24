@@ -21,7 +21,7 @@ const Nav = () => {
         <div className="navbar-links-desktop">
           <ul>
             <li><Link to="/AboutSpace">Space</Link></li>
-            <li><Link to="/">Solar System</Link></li>
+            <li><Link to="/SolarSystem">Solar System</Link></li>
             <li className="dropdown">
               <Link to="/">Planet Select <span className="dropdown-arrow">▼</span></Link>
               <div className="dropdown-content">
@@ -50,7 +50,7 @@ const Nav = () => {
       <div className={`navbar-mobile ${isOpen ? 'active' : ''}`}>
         <ul>
           <li><Link to="/AboutSpace" onClick={toggleMenu}>Space</Link></li>
-          <li><Link to="/" onClick={toggleMenu}>Solar System</Link></li>
+          <li><Link to="/SolarSystem" onClick={toggleMenu}>Solar System</Link></li>
           <li><Link to="/" onClick={toggleMenu}>Planet Select</Link></li>
           <li><Link to="/Astronauts" onClick={toggleMenu}>Astronauts</Link></li>
           <li><Link to="/" onClick={toggleMenu}>About</Link></li>
