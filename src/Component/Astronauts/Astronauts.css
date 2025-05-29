@@ -451,6 +451,15 @@ li::before {
   font-size: 1.2em;
 }
 
+li strong {
+  background: linear-gradient(180deg, #e0c3fc, #8ec5fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  padding: 10px;
+  font-size: 19px;
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
