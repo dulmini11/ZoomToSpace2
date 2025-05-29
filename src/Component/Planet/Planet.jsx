@@ -490,7 +490,10 @@ const planets = [
                 <img src={planet.image} alt={planet.name} className="planet-img" />
               </div>
 
-                <div className="planet-name">{planet.name}</div>
+                <div className={`planet-name ${index === selectedPlanet ? 'highlight' : ''}`}>
+                  {planet.name}
+                </div>
+
               </div>
             );
           })}
