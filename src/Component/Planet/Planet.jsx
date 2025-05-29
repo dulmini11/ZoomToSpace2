@@ -454,7 +454,6 @@ const planets = [
       {/* Header */}
       <div className="header">
         <h1 className="title">To Space and Back</h1>
-        <p className="subtitle">Safely in one day, just select destination</p>
       </div>
 
       {/* Planet Navigation */}

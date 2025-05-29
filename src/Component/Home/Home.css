@@ -88,13 +88,13 @@
 /* Glowing pulse effect */
 @keyframes glowPulse {
   0% {
-    text-shadow: 0 0 5px #fff, 0 0 10px rgba(234, 220, 18, 0.323), 0 0 20px rgba(229, 255, 0, 0.219);
+    text-shadow: 0 0 5px #000000, 0 0 10px rgba(25, 25, 23, 0.323), 0 0 20px rgba(229, 255, 0, 0.219);
   }
   50% {
-    text-shadow: 0 0 10px #fff, 0 0 20px rgb(0, 0, 0), 0 0 30px rgba(255, 251, 0, 0.173);
+    text-shadow: 0 0 10px #908f8f, 0 0 20px rgb(0, 0, 0), 0 0 30px rgba(255, 251, 0, 0.173);
   }
   100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
+    text-shadow: 0 0 5px #161515, 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
   }
 }
 
