@@ -1,0 +1,363 @@
+/* Planet.css */
+
+/* Container and Background */
+.planet-container {
+  min-height: 100vh;
+  background: black;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Animated Stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Grid Overlay */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  font-weight: 300;
+}
+.planet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Planet Navigation */
+.planet-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  padding: 0 2rem;
+  margin: 2rem 0;
+}
+
+.nav-buttonp {
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-buttonp:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.nav-button0:first-child {
+  margin-right: 2rem;
+}
+
+.nav-buttonp:last-child {
+  margin-left: 2rem;
+}
+
+/* Planets Row Container */
+.planets-row {
+  position: relative;
+  width: 80rem;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Individual Planet Items */
+.planet-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.planet-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Planet Circle */
+.planet-circle {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.planet-circle::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(134, 40, 40, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.planet-item:hover .planet-circle::before {
+  opacity: 1;
+  animation: shine 1s ease-in-out;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Planet Name */
+.planet-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* Selected Planet Styles */
+.planet-item.selected {
+  z-index: 10;
+}
+
+.planet-item.selected .planet-circle {
+  transform: scale(1.5);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  animation: pulse-glow 2s infinite;
+}
+
+.planet-item.selected .planet-name {
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Adjacent Planet Styles */
+.planet-item.adjacent {
+  z-index: 5;
+}
+
+.planet-item.adjacent .planet-circle {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Distant Planet Styles */
+.planet-item.distant {
+  z-index: 1;
+}
+
+.planet-item.distant .planet-circle {
+  transform: scale(0.8);
+  opacity: 0.4;
+}
+
+.planet-item.distant .planet-name {
+  opacity: 0.6;
+}
+
+/* Selected Planet Description */
+.selected-planet-description {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.description-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 28rem;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.description-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.description-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.description-text {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* Book Trip Button */
+.book-trip-button {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.book-trip-button:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.book-trip-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .planet-navigation {
+    padding: 0 1rem;
+  }
+  
+  .planets-row {
+    width: 20rem;
+  }
+  
+  .nav-button:first-child {
+    margin-right: 1rem;
+  }
+  
+  .nav-button:last-child {
+    margin-left: 1rem;
+  }
+  
+  .description-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding-top: 2rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .planets-row {
+    width: 16rem;
+  }
+  
+  .planet-circle {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+  
+  .planet-item.selected .planet-circle {
+    transform: scale(1.3);
+  }
+}

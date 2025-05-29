@@ -4,6 +4,7 @@ import Home from './Component/Home/Home';
 import AboutSpace from './Component/AboutSpace/AboutSpace';
 import Astronauts from './Component/Astronauts/Astronauts';
 import SolarSystem from './Component/SolarSystem/SolarSystem';
+import Planet from './Component/Planet/Planet';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/AboutSpace" element={<AboutSpace />} />
         <Route path="/Astronauts" element={<Astronauts />} />
         <Route path="/SolarSystem" element={<SolarSystem />} />
+        <Route path="/Planet" element={<Planet />} />
         {/* Add more routes */}
       </Routes>
     </Router>
