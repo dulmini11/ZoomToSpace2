@@ -81,6 +81,7 @@ h1 {
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 30px;
   background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -106,7 +107,7 @@ h1::after {
 h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #e0e4fc;
+  color: #93c5fd;
   position: relative;
   padding-left: 15px;
 }
@@ -317,7 +318,7 @@ h1::after {
 h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #e0e4fc;
+  color: #93c5fd;
   position: relative;
   padding-left: 15px;
 }
@@ -352,21 +353,10 @@ section {
 
 /* Section theme colors */
 section:nth-child(odd) {
-  background: rgba(255, 255, 255, 0.08);
-  border-left: 3px solid rgba(252, 177, 142, 0.5);
-}
+  background: rgba(255, 255, 255, 0);}
 
 section:nth-child(even) {
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid rgba(224, 195, 252, 0.5);
-}
-
-/* Hover effect on sections */
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.3),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0);
 }
 
 /* Glass reflections */
@@ -452,12 +442,11 @@ li::before {
 }
 
 li strong {
-  background: linear-gradient(180deg, #e0c3fc, #8ec5fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #93bde4;
   font-weight: 700;
   padding: 10px;
   font-size: 19px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 

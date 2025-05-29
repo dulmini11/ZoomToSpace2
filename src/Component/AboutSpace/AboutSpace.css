@@ -9,60 +9,44 @@
   font-family: 'Segoe UI', sans-serif;
   border-radius: 20px;
   z-index: 1;
+  overflow: hidden; /* Important: prevents stars from showing outside */
 }
 
-.about-space-section::after {
+/* Moving stars background */
+.about-space-section::before {
   content: "";
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  right: -100px;
-  bottom: -100px;
-  background:
-      radial-gradient(40px at 10% 10%, #0b78de 100%, transparent),
-      radial-gradient(60px at 80% 30%, #07079e 100%, transparent),
-      radial-gradient(45px at 20% 50%, #00f8d3 100%, transparent),
-      radial-gradient(60px at 70% 70%, #fffb1786 100%, transparent),
-      radial-gradient(40px at 30% 85%, #0d938e 100%, transparent),
-      radial-gradient(40px at 84% 50%, #00f8d3 100%, transparent),
-      radial-gradient(50px at 60% 20%, #fffb1786 100%, transparent),
-      radial-gradient(40px at 10% 45%, #0d938e 100%, transparent),
-      radial-gradient(70px at 40% 86%, #fffb1786 100%, transparent),
-      radial-gradient(35px at 100% 90%, #ffffff 100%, transparent),
-      radial-gradient(35px at 55% 95%, #0b05be 100%, transparent);   
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(4px 4px at 40px 70px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 150px 120px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 200px 90px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
     
-  filter: blur(30px);
-  opacity: 0.3;
-  z-index: -2;
-  transition: 0.5s, 99999s 99999s transform;
+    radial-gradient(1px 1px at 10px 120px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 201px 190px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 100px 90px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 30px 220px, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+  background-size: 400px 400px;
+  z-index: -1;
+  animation: sparkle 50s linear infinite;
+
 }
 
-
-/* Hover effect */
-.about-space-section:hover::before,
-.about-space-section:hover::after {
-  transform: rotate(36000deg);
-  transition: 0.5s, 600s linear transform;
+@keyframes sparkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
 }
-
 
 .about-space-section h2 {
   font-size: 2.5rem;
   text-align: center;
-  color: #fff;
-  animation: pulseGlow 2s ease-in-out infinite;
+  color:#93c5fd;;
 }
-
-@keyframes pulseGlow {
-  0%, 100% {
-    text-shadow: 0 0 5px #f7cc31, #101111;
-  }
-  50% {
-    text-shadow: 0 0 10px #ffe819, 0 0 20px #000000, 0 0 40px #494748;
-  }
-}
-
 
 .about-space-section h3 {
   font-size: 1.6rem;
