@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import solarSystem from '../../assets/sola system.mp4';
 import './SolarSystem.css';
 
 const SolarSystemExplorer = () => {
@@ -45,7 +46,12 @@ const SolarSystemExplorer = () => {
     <div>
       {/* Hero Section */}
       <div className="hero">
-        <div className="hero-gradient"></div>
+              <div className="hero-section">
+        <video autoPlay muted loop className="hero-video">
+          <source src={solarSystem} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         <div className="hero-content">
           <h1 className="hero-title">Solar System Explorer</h1>
           <p className="hero-description">
@@ -67,6 +73,8 @@ const SolarSystemExplorer = () => {
             </div>
           </div>
         </div>
+      </div>
+
       </div>
 
       {/* Navigation */}
@@ -184,7 +192,7 @@ const SolarSystemExplorer = () => {
         {activeTab === 'facts' && (
           <div>
             <h2 className="section-title">10 Things to Know About the Solar System</h2>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-4">
               {facts.map(fact => (
                 <div key={fact.id} className="card">
                   <h3 className="card-title">
@@ -202,7 +210,7 @@ const SolarSystemExplorer = () => {
           <div>
             <h2 className="section-title">Structure of the Solar System</h2>
             
-            <div className="grid grid-cols-1">
+            <div className="grid grid-cols-2">
               <section className="card">
                 <h3 className="card-title">The Sun</h3>
                 <p className="card-content">
@@ -242,12 +250,6 @@ const SolarSystemExplorer = () => {
           </div>
         )}
       </div>
-      
-      {/* Footer */}
-      <footer className="footer">
-        <p>Solar System Explorer - Interactive Educational Resource</p>
-        <p className="footer-date">Last updated: May 16, 2025</p>
-      </footer>
     </div>
   );
 };

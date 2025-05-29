@@ -364,16 +364,6 @@ section:nth-child(even) {
   border-left: 3px solid rgba(224, 195, 252, 0.5);
 }
 
-/* Special section for history - darker theme */
-section:nth-child(3) {
-  background: rgba(30, 60, 114, 0.3);
-}
-
-/* Special section for future - cooler theme */
-section:nth-child(6) {
-  background: rgba(42, 82, 152, 0.3);
-}
-
 /* Hover effect on sections */
 section:hover {
   transform: translateY(-5px);
