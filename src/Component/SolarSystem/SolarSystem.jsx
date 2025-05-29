@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import solarSystem from '../../assets/sola system.mp4';
 import './SolarSystem.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const SolarSystemExplorer = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  
+  const navigate = useNavigate();
+
   // Planet data
   const planets = [
     { id: 'mercury', name: 'Mercury', type: 'Terrestrial', diameter: '4,879 km', distance: '57.9 million km' },
@@ -169,24 +173,21 @@ const SolarSystemExplorer = () => {
           </div>
         )}
 
-        {/* Planets Tab */}
-        {activeTab === 'planets' && (
-          <div>
-            <h2 className="section-title">The Planets</h2>
-            <div className="grid grid-cols-4">
-              {planets.map(planet => (
-                <div key={planet.id} className="card planet-card">
-                  <h3 className="planet-name">{planet.name}</h3>
-                  <div className="planet-details">
-                    <div><span className="label">Type:</span> {planet.type}</div>
-                    <div><span className="label">Diameter:</span> {planet.diameter}</div>
-                    <div><span className="label">Distance from Sun:</span> {planet.distance}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+      {activeTab === 'planets' && (
+              <div >
+                <h1 className="section-title">The Planets</h1>
+                <p>
+                  Planets, both within and beyond our solar system, are central to understanding the universe and our place within it. Their formation begins in swirling disks of gas and dust around young stars, where particles collide and stick together, gradually building up into planetesimals and eventually full-fledged planets through a process called accretion. Over billions of years, these bodies evolve, shaped by geological activity, climate, magnetic fields, and interactions with moons, asteroids, and comets. Some planets, like Earth, have plate tectonics, weather systems, and magnetic fields that protect the surface from solar radiation, creating conditions suitable for life. Others, like Venus, experience runaway greenhouse effects, resulting in surface temperatures hot enough to melt lead. Gas giants like Jupiter not only have immense mass and swirling storms like the Great Red Spot, but also act as cosmic shields, deflecting comets and asteroids from the inner solar system. Uranus and Neptune, the ice giants, are known for their unique axial tilts and dynamic weather patterns despite being so far from the Sun. The study of planets also extends to exoplanets—planets orbiting stars beyond our Sun—which come in a wide range of types, including super-Earths, mini-Neptunes, and Earth-like worlds. With missions like Kepler, TESS, and the James Webb Space Telescope, astronomers are uncovering thousands of these distant worlds, examining their atmospheres, and searching for bio-signatures. As our tools and technology improve, the exploration of planets continues to inspire questions about habitability, the origin of life, and the possibility of other civilizations in the universe.</p>
+
+                <button
+                  className="planet-button"
+                  onClick={() => navigate('/Planet')}
+                >
+                  Explore Individual Planet
+                </button>
+              </div>
+            )}
+
 
         {/* Facts Tab */}
         {activeTab === 'facts' && (

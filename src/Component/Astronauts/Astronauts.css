@@ -112,14 +112,12 @@ h2 {
 }
 
 h2::before {
-  content: "";
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
   height: 70%;
   width: 4px;
-  background: linear-gradient(180deg, #8ec5fc, #e0c3fc);
   border-radius: 2px;
 }
 
@@ -332,7 +330,6 @@ h2::before {
   transform: translateY(-50%);
   height: 70%;
   width: 4px;
-  background: linear-gradient(180deg, #8ec5fc, #e0c3fc);
   border-radius: 2px;
 }
 
@@ -447,7 +444,6 @@ li {
 }
 
 li::before {
-  content: "•";
   position: absolute;
   left: 5px;
   top: 0;
@@ -455,25 +451,6 @@ li::before {
   font-size: 1.2em;
 }
 
-/* Alternate list item styling bulot point color */
-li:nth-child(odd)::before {
-  color: #efe4ac;
-}
-
-li:nth-child(even)::before {
-  color: #bbbfee;
-}
-
-/* Strong text */
-strong {
-  color: #e0c3fc;
-  font-weight: 600;
-}
-
-/* Contact section special styling */
-section:last-child {
-  background: rgba(142, 197, 252, 0.1);
-}
 
 /* Responsive design */
 @media (max-width: 768px) {

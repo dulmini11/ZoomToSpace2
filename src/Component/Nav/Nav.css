@@ -40,7 +40,7 @@
 
 .navbar-links-desktop ul {
   display: flex;
-  list-style: none;
+  list-style-type: none !important;
   margin: 0;
   padding: 0;
 }
@@ -167,7 +167,7 @@
   }
   
   .navbar-mobile ul {
-    list-style: none;
+    list-style-type: none !important;
     padding: 0;
     margin: 0;
   }

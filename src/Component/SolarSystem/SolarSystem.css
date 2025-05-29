@@ -270,3 +270,20 @@ body {
 .stat-value {
   font-size: 1.25rem;
 }
+.planet-button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  align-items: center;
+  border-radius: 3rem; /* rounded-md */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.planet-button:hover {
+  background-color: #1d4ed8; /* Tailwind's blue-700 */
+}

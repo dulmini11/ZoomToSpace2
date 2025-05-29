@@ -34,6 +34,35 @@
   50% { opacity: 1; transform: scale(1.2); }
 }
 
+
+/* Section titles (🔭 General Overview, 🌐 Physical Characteristics, etc.) */
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 15px 0 8px 0;
+  color: #a3bbff;
+}
+
+/* Section content paragraphs */
+.section-content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+/* Container for all sections */
+.planet-sections {
+  max-height: 350px;
+  padding-right: 10px;
+}
+
+/* Individual section container */
+.section {
+  margin-bottom: 20px;
+}
+
+
 /* Grid Overlay */
 .grid-overlay {
   position: absolute;
@@ -121,7 +150,7 @@
 .planets-row {
   position: relative;
   width: 80rem;
-  height: 15rem;
+  height: 18rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +272,6 @@
 
 /* Selected Planet Description */
 .selected-planet-description {
-  text-align: center;
   margin-top: 4rem;
   padding: 0 2rem;
   position: relative;
@@ -255,11 +283,12 @@
   backdrop-filter: blur(12px);
   border-radius: 1rem;
   padding: 2rem;
-  max-width: 28rem;
+  width: 80%;
   margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  height: 920px;
 }
 
 .description-card:hover {
