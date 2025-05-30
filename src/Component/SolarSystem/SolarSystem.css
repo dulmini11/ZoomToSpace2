@@ -1,0 +1,541 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  background-color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 24rem;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 60px;
+  color: #93c5fd;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  max-width: 48rem;
+}
+
+.hero-stats {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fcd34d;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+}
+
+/* Navigation */
+.nav {
+  background-color: #04061d;
+  overflow-x: auto;
+}
+
+.nav-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+}
+
+.nav-button {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #bfdbfe;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: rgba(8, 17, 49, 0.5);
+}
+
+.nav-button.active {
+  background-color: #081540;
+  color: white;
+}
+
+/* Content area */
+.content {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #93c5fd;
+}
+
+.section-text {
+  margin-bottom: 1rem;
+}
+
+/* Grid layouts */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Glassmorphism Card styling with transparent center */
+.card {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Add glass effect only to the border area */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  z-index: -1;
+}
+
+.card:hover {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card:hover::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Alternative: Completely transparent center */
+.card-full-transparent {
+  background: transparent;
+  backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-full-transparent:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-content {
+  font-size: 1rem;
+}
+
+.fact-number {
+  color: #fcd34d;
+  margin-right: 0.5rem;
+}
+
+.label {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+/* Planet cards */
+.planet-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.planet-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.planet-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: rgb(0, 0, 0);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.stat-label {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+}
+.planet-button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  align-items: center;
+  border-radius: 3rem; /* rounded-md */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.planet-button:hover {
+  background-color: #1d4ed8; /* Tailwind's blue-700 */
+}
+
+/*////////////*/
+/* Black Holes & Wormholes Section Styles */
+.blackhole-section {
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.blackhole-card {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.blackhole-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blackhole-card:hover::before {
+  opacity: 1;
+}
+
+.blackhole-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-color: #666;
+}
+
+.blackhole-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.blackhole-card:hover .blackhole-image {
+  filter: brightness(1) contrast(1.2);
+}
+
+.blackhole-type {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.blackhole-mass {
+  color: #a1a1a1;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.blackhole-formation {
+  color: #b2b2b2;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.blackhole-description {
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* Stars & Nebulae Section Styles */
+.stellar-section {
+  background: linear-gradient(135deg, #0a0a2e, #1a1a4e);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+  border: 1px solid #4a4a8e;
+}
+
+.stellar-card {
+  background: linear-gradient(135deg, #1e1e4e, #2a2a6e);
+  border: 2px solid #4a4a8e;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stellar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6347);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stellar-card:hover::before {
+  opacity: 1;
+}
+
+.stellar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 100, 0.3);
+  border-color: #6a6aae;
+}
+
+.stellar-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.stellar-card:hover .stellar-image {
+  filter: brightness(1) contrast(1.2);
+}
+
+.stellar-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stellar-examples {
+  color: #ff8c00;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.stellar-description {
+  color: #e0e0ff;
+  line-height: 1.6;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+
+/* Enhanced grid layouts */
+.grid-cols-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-cols-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nav-button {
+    padding: 10px 15px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-button {
+    width: 200px;
+    text-align: center;
+  }
+}
+
+/* Loading animation for images */
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(45deg, #333, #555, #333);
+  background-size: 400% 400%;
+  animation: shimmer 2s ease-in-out infinite;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-style: italic;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Icon styles for sections */
+.section-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: brightness(1.2);
+}

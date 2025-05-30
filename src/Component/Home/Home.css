@@ -1,0 +1,127 @@
+
+.home-container {
+
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Red background layer (goes behind video) */
+.background-color-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 0;
+}
+
+/* Video overlay (on top of red background) */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.video-overlay video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content on top of video */
+.content-layer {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+.video-background {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow:hidden;
+  margin-top: 70px;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  margin-top: 280px;
+  position: relative;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start; /* Align items to the right */
+  color: white;
+  text-align: left;     /* Align text to the right */
+  padding: 0 20px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  margin-right: auto;     /* Push the overlay to the right */
+  margin-left: 0;       /* Make sure it stays on the right */
+}
+
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-top: 150px;
+  position: relative;
+  color: #fff;
+  text-align: left;
+  animation: glowPulse 2s ease-in-out infinite;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Glowing pulse effect */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #000000, 0 0 10px rgba(25, 25, 23, 0.323), 0 0 20px rgba(229, 255, 0, 0.219);
+  }
+  50% {
+    text-shadow: 0 0 10px #908f8f, 0 0 20px rgb(0, 0, 0), 0 0 30px rgba(255, 251, 0, 0.173);
+  }
+  100% {
+    text-shadow: 0 0 5px #161515, 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0);
+  }
+}
+
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.scroll-down-arrow {
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down-arrow img {
+  width: 90px;
+  height: auto;
+}
+
+/* Optional bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
